@@ -29,27 +29,27 @@ class Container {
         this.#save = []
     }
 
-    getAll() {
-        return this.#save
+    save( object ) {
+        this.#save.push( object )
     }
 
-    getById( number ) { 
-        if ( number === null ) {
+    getById( id ) { 
+        if ( id === null ) {
             return null 
         } else {
             return this.#id 
         } 
     }
 
-    save( object ) {
-        this.#save.push( object )
+    getAll() {
+        return this.#save
     }
 
-    deleteById( number ) {
-
+    deleteById( id ) {
+        return this.#save.splice( id )
     }
 
-    deteleAll() {
-
+    deteleAll( id ) {
+        return this.#save.splice( 0 , id.lenght)
     }
 }
